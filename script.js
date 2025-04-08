@@ -54,13 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ป้องกัน XSS
-function sanitizeText(text) {
-    const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-}
-
 // CSS animation
 document.head.insertAdjacentHTML("beforeend", `
 <style>
@@ -124,3 +117,10 @@ document.addEventListener("keydown", function (e) {
     showToast("ไม่ให้ก็อปนะ อิอิ");
   }
 });
+
+// ป้องกัน XSS
+function sanitizeText(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
