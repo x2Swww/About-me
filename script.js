@@ -97,15 +97,16 @@ document.head.insertAdjacentHTML("beforeend", `
 </style>
 `);
 
+// ป้องกัน Inspect / Copy / View Source
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  showToast("คลิกขวาไม่ได้นะ อิอิ");
+  showToast("คลิกขวาไม่ได้นะครับ");
 });
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "F12") {
     e.preventDefault();
-    showToast("ไม่ให้เปิด DevTools นะครับ");
+    showToast("ไม่อณุญาติให้ DevTools นะครับ");
   }
 
   if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) {
